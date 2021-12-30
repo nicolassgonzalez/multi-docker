@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t nicolassgonzalez/react-test-f ./client/Dockerfile.dev
+  - docker build -t nicolassgonzalez/react-test -f ./client/Dockerfile.dev
 
 script:
   - docker run nicolassgonzalez/react-test npm test -- --coverage
@@ -19,5 +19,5 @@ after_success:
   - docker push nicolassgonzalez/multi-nginx
   - docker push nicolassgonzalez/multi-server
   - docker push nicolassgonzalez/multi-worker
-  
+
 
